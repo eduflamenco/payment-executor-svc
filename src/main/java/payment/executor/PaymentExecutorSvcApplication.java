@@ -1,4 +1,4 @@
-package org.example.payment.executor;
+package payment.executor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
