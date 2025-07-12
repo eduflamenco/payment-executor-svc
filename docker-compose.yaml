@@ -1,0 +1,57 @@
+services:
+  postgres:
+    image: postgres:12-alpine
+    container_name: postgres12
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: secret
+      POSTGRES_MULTIPLE_DATABASES: "bank_ops, payment"
+    ports:
+      - "5432:5432"
+    networks:
+      - springnet
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - "5672:5672"  # Puerto para la comunicación con aplicaciones
+      - "15672:15672"  # Puerto para acceder a la interfaz de administración de RabbitMQ
+    networks:
+      - springnet
+
+  springboot-app-1:
+    image: edflamenco/payment-executor:v1
+    build: .
+    container_name: payment-executor
+    ports:
+      - "8090:8090"
+    networks:
+      - springnet
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres12:5432/bank_ops
+      SPRING_RABBITMQ_HOST: rabbitmq
+    depends_on:
+      - postgres
+      - rabbitmq
+
+  springboot-app-2:
+    image: edflamenco/payment-processor:v1
+    build: .
+    container_name: payment-processor
+    ports:
+      - "8080:8080"
+    networks:
+      - springnet
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres12:5432/payment
+      SPRING_RABBITMQ_HOST: rabbitmq
+    depends_on:
+      - springboot-app-1
+
+networks:
+  springnet:
+    driver: bridge

@@ -37,6 +37,9 @@ public class Transaction {
     @JoinColumn(name = "client_id", nullable = false)
     private Client client;
 
+    @Column(name = "status", length = 10, nullable = false)
+    private String status;
+
     @Column(name = "created_date", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdDate = LocalDateTime.now();
 

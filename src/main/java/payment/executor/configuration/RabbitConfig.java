@@ -1,4 +1,4 @@
-/*
+
 package payment.executor.configuration;
 
 import org.springframework.amqp.core.Binding;
@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitConfig {
 
 
-    public static final String QUEUE_NAME = "testing_queue";
-    public static final String EXCHANGE_NAME = "testing_exchange";
-    public static final String ROUTING_KEY = "routing_key_demo";
+    public static final String QUEUE_NAME = "transaction_queue";
+    public static final String EXCHANGE_NAME = "transaction_exchange";
+    public static final String ROUTING_KEY = "transaction_routing_key";
 
     @Bean
     public Queue queue() {
@@ -31,4 +31,4 @@ public class RabbitConfig {
         return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY);
     }
 }
-*/
+

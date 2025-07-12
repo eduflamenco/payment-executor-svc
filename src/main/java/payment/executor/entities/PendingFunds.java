@@ -30,8 +30,8 @@ public class PendingFunds {
     @Column(name = "amount", nullable = false)
     private double amount = 0.00;
 
-    @Column(name = "status", length = 10, nullable = false)
-    private String status;
+    @Column(name = "is_pending", nullable = false)
+    private boolean isPending = true;
 
     @CreationTimestamp
     @Column(name = "created_date", nullable = false, updatable = false)

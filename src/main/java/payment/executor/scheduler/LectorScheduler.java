@@ -3,19 +3,20 @@ package payment.executor.scheduler;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import payment.executor.confirmation.PayConfirmation;
 
 @Component
 @EnableScheduling
 public class LectorScheduler {
 
-    /*private final MakeTransaction makeTransaction;
+    private final PayConfirmation payConfirmation;
 
-    public LectorScheduler(MakeTransaction makeTransaction) {
-        this.makeTransaction = makeTransaction;
+    public LectorScheduler(PayConfirmation payConfirmation) {
+        this.payConfirmation = payConfirmation;
     }
 
-    @Scheduled(*//*initialDelay = 10000, *//*fixedDelay = 30000) // cada 30 segundos
-    public void leerPeriodicamente() {
-        makeTransaction.makeTransaction();
-    }*/
+    @Scheduled(initialDelay = 10000, fixedDelay = 30000) // cada 30 segundos
+    public void readTransactions() {
+        payConfirmation.processTransactions();
+    }
 }

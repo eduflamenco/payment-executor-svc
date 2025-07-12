@@ -1,7 +1,7 @@
 package payment.executor.validate;
 
 
-import payment.executor.contracts.request.PaymentTransaction;
+import payment.executor.contracts.validate.request.PaymentTransaction;
 
 public abstract class Validator {
     private Validator next;

@@ -8,10 +8,10 @@ import lombok.Data;
 public class ValidatorResult {
     private boolean valid;
     private String message;
+    private String transactionId;
+    private Double amount;
+    private String billNumber;
 
-    public ValidatorResult(boolean valid) {
-        this.valid = valid;
-    }
 
     public ValidatorResult(boolean valid, String message) {
         this.valid = valid;

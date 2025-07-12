@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import payment.executor.contracts.request.PaymentTransaction;
-import payment.executor.contracts.response.PaymentResponse;
+import payment.executor.contracts.validate.request.PaymentTransaction;
+import payment.executor.contracts.validate.response.PaymentResponse;
 import payment.executor.validate.ExecuteValidation;
 
 @RestController

@@ -1,7 +1,7 @@
 package payment.executor.validate;
 
 import org.springframework.stereotype.Component;
-import payment.executor.contracts.request.PaymentTransaction;
+import payment.executor.contracts.validate.request.PaymentTransaction;
 
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;

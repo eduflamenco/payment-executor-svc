@@ -2,7 +2,7 @@ package payment.executor.validate;
 
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
-import payment.executor.contracts.request.PaymentTransaction;
+import payment.executor.contracts.validate.request.PaymentTransaction;
 
 @Component
 public class AmountValidator extends Validator {

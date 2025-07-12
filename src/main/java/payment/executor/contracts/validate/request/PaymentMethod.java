@@ -1,4 +1,4 @@
-package payment.executor.contracts.request;
+package payment.executor.contracts.validate.request;
 
 public enum PaymentMethod {
     CREDIT_CARD,

@@ -1,4 +1,4 @@
-package payment.executor.contracts.response;
+package payment.executor.contracts.validate.response;
 
 import java.util.Objects;
 

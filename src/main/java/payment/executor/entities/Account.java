@@ -25,7 +25,7 @@ public class Account {
     private String accountNumber;
 
     @Column(name = "balance")
-    private double balance = 0.00;
+    private Double balance = 0.00;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "client_id", nullable = false)

@@ -1,10 +1,11 @@
-package payment.executor.contracts.request;
+package payment.executor.contracts.validate.request;
 
 import java.util.Objects;
 
 public record PaymentTransaction(
         String customerId,
         double paymentAmount,
+        String receiverAccountId,
         PaymentMethod paymentMethod,
         CreditCardDetails creditCardDetails
 ) {

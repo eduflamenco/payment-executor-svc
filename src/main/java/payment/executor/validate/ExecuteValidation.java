@@ -1,8 +1,8 @@
 package payment.executor.validate;
 
 import org.springframework.stereotype.Component;
-import payment.executor.contracts.request.PaymentTransaction;
-import payment.executor.contracts.response.PaymentResponse;
+import payment.executor.contracts.validate.request.PaymentTransaction;
+import payment.executor.contracts.validate.response.PaymentResponse;
 
 @Component
 public class ExecuteValidation {
@@ -25,7 +25,7 @@ public class ExecuteValidation {
             System.out.println("Exception occured" + e.getMessage());
             return new PaymentResponse("error", e.getMessage(), "", "", 0);
         }
-        return  new PaymentResponse("success", result.getMessage(), "", "", 0);
+        return  new PaymentResponse("success", result.getMessage(), result.getTransactionId(), result.getBillNumber(), result.getAmount());
     }
 
 }
