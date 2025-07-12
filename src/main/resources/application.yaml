@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: build
+
+server:
+  port: 8090
+
+application:
+  properties:
+    transaction:
+      max-amount: 2000

@@ -1,3 +1,4 @@
+/*
 package payment.executor.configuration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -64,3 +65,4 @@ public class RedisConfiguration {
                 .build();
     }
 }
+*/

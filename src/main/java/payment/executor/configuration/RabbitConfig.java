@@ -1,3 +1,4 @@
+/*
 package payment.executor.configuration;
 
 import org.springframework.amqp.core.Binding;
@@ -30,3 +31,4 @@ public class RabbitConfig {
         return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY);
     }
 }
+*/
