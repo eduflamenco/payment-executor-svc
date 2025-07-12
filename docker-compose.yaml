@@ -5,7 +5,7 @@ services:
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: secret
-      POSTGRES_MULTIPLE_DATABASES: "bank_ops, payment"
+      POSTGRES_DB: bank_ops
     ports:
       - "5432:5432"
     networks:
@@ -47,7 +47,7 @@ services:
     networks:
       - springnet
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres12:5432/payment
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres12:5432/bank_ops
       SPRING_RABBITMQ_HOST: rabbitmq
     depends_on:
       - springboot-app-1
